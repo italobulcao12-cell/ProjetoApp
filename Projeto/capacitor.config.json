@@ -1,0 +1,11 @@
+{
+  "appId": "br.com.segundaviamais.app",
+  "appName": "Segunda via +",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  },
+  "android": {
+    "backgroundColor": "#FAFBFF"
+  }
+}

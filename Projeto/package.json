@@ -1,0 +1,56 @@
+{
+  "name": "segunda-via-mais",
+  "version": "1.0.0",
+  "description": "Segunda via + - gestão e emissão de segunda via de documentos",
+  "author": "Equipe Segunda via +",
+  "main": "electron/main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "build:desktop": "electron-builder --publish never"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.1.2",
+    "@capacitor/core": "^6.1.2"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
+    "@capacitor/cli": "^6.1.2",
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "br.com.segundaviamais.app",
+    "productName": "Segunda via Mais",
+    "files": [
+      "electron/**/*",
+      "www/**/*",
+      "package.json"
+    ],
+    "icon": "www/icon-512.png",
+    "artifactName": "Segunda-via-Mais-${version}-${os}-${arch}.${ext}",
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        }
+      ],
+      "category": "public.app-category.business"
+    },
+    "linux": {
+      "target": "AppImage",
+      "category": "Office"
+    }
+  }
+}
